@@ -3,11 +3,103 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Survey View Controller-->
+        <scene sceneID="bEi-hf-RDc">
+            <objects>
+                <viewController storyboardIdentifier="SurveyViewController" id="4yo-Ib-chA" customClass="SurveyViewController" customModule="MedicationManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V2x-yM-Ybw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dn8-Ss-NNL">
+                                <rect key="frame" x="50" y="94" width="45" height="31"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="x.circle.fill" catalog="system" symbolScale="large" renderingMode="original"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="4yo-Ib-chA" eventType="touchUpInside" id="JMY-1e-zQQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Today I am feeling:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whL-oB-8ao">
+                                <rect key="frame" x="112" y="197" width="190" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="LGo-Ie-42o">
+                                <rect key="frame" x="167" y="326" width="80" height="302"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPU-Ay-OT8">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="aPU-Ay-OT8" secondAttribute="height" multiplier="1:1" id="iZL-us-6RW"/>
+                                            <constraint firstAttribute="height" constant="80" id="p9a-Kl-jQp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="😀"/>
+                                        <connections>
+                                            <action selector="emojiTapped:" destination="4yo-Ib-chA" eventType="touchUpInside" id="WCa-KG-lap"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OE4-D4-5OW">
+                                        <rect key="frame" x="0.0" y="111" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="anP-b3-5Sm"/>
+                                            <constraint firstAttribute="width" secondItem="OE4-D4-5OW" secondAttribute="height" multiplier="1:1" id="drm-vV-NtQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="😕"/>
+                                        <connections>
+                                            <action selector="emojiTapped:" destination="4yo-Ib-chA" eventType="touchUpInside" id="uvT-6Q-Neh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPT-kt-xFa">
+                                        <rect key="frame" x="0.0" y="222" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="dlu-h5-eOq"/>
+                                            <constraint firstAttribute="width" secondItem="cPT-kt-xFa" secondAttribute="height" multiplier="1:1" id="zcA-7P-tkK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="😔"/>
+                                        <connections>
+                                            <action selector="emojiTapped:" destination="4yo-Ib-chA" eventType="touchUpInside" id="igb-JU-BtA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cPT-kt-xFa" firstAttribute="width" secondItem="cPT-kt-xFa" secondAttribute="height" multiplier="1:1" id="E4G-uk-6qS"/>
+                                    <constraint firstItem="OE4-D4-5OW" firstAttribute="width" secondItem="OE4-D4-5OW" secondAttribute="height" multiplier="1:1" id="hqq-CD-Uv2"/>
+                                    <constraint firstItem="cPT-kt-xFa" firstAttribute="width" secondItem="cPT-kt-xFa" secondAttribute="height" multiplier="1:1" id="nxz-zI-Exa"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Y6-FY-rsa"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="whL-oB-8ao" firstAttribute="centerX" secondItem="2Y6-FY-rsa" secondAttribute="centerX" id="79Q-u5-6dq"/>
+                            <constraint firstItem="Dn8-Ss-NNL" firstAttribute="top" secondItem="2Y6-FY-rsa" secondAttribute="top" constant="50" id="R30-m7-hoY"/>
+                            <constraint firstItem="Dn8-Ss-NNL" firstAttribute="leading" secondItem="2Y6-FY-rsa" secondAttribute="leading" constant="50" id="YDX-dj-NjT"/>
+                            <constraint firstItem="LGo-Ie-42o" firstAttribute="top" secondItem="whL-oB-8ao" secondAttribute="bottom" constant="100" id="ifD-dJ-bTp"/>
+                            <constraint firstItem="LGo-Ie-42o" firstAttribute="centerX" secondItem="2Y6-FY-rsa" secondAttribute="centerX" id="vpf-2Y-grU"/>
+                            <constraint firstItem="whL-oB-8ao" firstAttribute="top" secondItem="Dn8-Ss-NNL" secondAttribute="top" id="zkB-IE-NlP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kJW-ww-SqP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821.73913043478262" y="-550.44642857142856"/>
+        </scene>
         <!--Medication List View Controller-->
         <scene sceneID="3pT-Tr-bhd">
             <objects>
@@ -17,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hA0-PT-01C">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="medicationCell" rowHeight="74" id="UIB-19-fgW" customClass="MedicationTableViewCell" customModule="MedicationManager" customModuleProvider="target">
@@ -68,9 +160,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="nameLabel" destination="N0C-QF-OJi" id="Mdp-cR-nhn"/>
-                                            <outlet property="timeLabel" destination="Bt8-bk-SWC" id="af2-4S-ZOl"/>
-                                            <outlet property="wasTakenButton" destination="V1D-8E-ohC" id="f3c-dW-BuV"/>
+                                            <outlet property="nameLabel" destination="N0C-QF-OJi" id="HKk-wi-Xhu"/>
+                                            <outlet property="timeLabel" destination="Bt8-bk-SWC" id="2V1-ZB-UZs"/>
+                                            <outlet property="wasTakenButton" destination="V1D-8E-ohC" id="Ier-Ed-bbD"/>
                                             <segue destination="lCy-n6-x6O" kind="show" identifier="toMedicationDetails" id="gMW-cP-eL1"/>
                                         </connections>
                                     </tableViewCell>
@@ -80,14 +172,49 @@
                                     <outlet property="delegate" destination="XRY-eo-OdT" id="kQM-Jj-vXy"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dO8-vQ-u9S">
+                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Today I am feeling: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfj-RU-g0L">
+                                        <rect key="frame" x="16" y="12" width="322" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lA-9L-SQS">
+                                        <rect key="frame" x="354" y="8" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="6lA-9L-SQS" secondAttribute="height" multiplier="1:1" id="ChS-Mk-WdO"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="❓"/>
+                                        <connections>
+                                            <action selector="surveyButtonTapped:" destination="XRY-eo-OdT" eventType="touchUpInside" id="SUJ-Ur-zud"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <constraints>
+                                    <constraint firstItem="6lA-9L-SQS" firstAttribute="top" secondItem="dO8-vQ-u9S" secondAttribute="top" constant="8" id="2zQ-pR-z9T"/>
+                                    <constraint firstItem="rfj-RU-g0L" firstAttribute="leading" secondItem="dO8-vQ-u9S" secondAttribute="leading" constant="16" id="4dV-ro-q2q"/>
+                                    <constraint firstItem="6lA-9L-SQS" firstAttribute="leading" secondItem="rfj-RU-g0L" secondAttribute="trailing" constant="16" id="59C-Zb-tcp"/>
+                                    <constraint firstItem="rfj-RU-g0L" firstAttribute="top" secondItem="dO8-vQ-u9S" secondAttribute="top" constant="12" id="JlJ-gO-sLJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="6lA-9L-SQS" secondAttribute="bottom" constant="8" id="R1P-KV-KjI"/>
+                                    <constraint firstAttribute="trailing" secondItem="6lA-9L-SQS" secondAttribute="trailing" constant="16" id="bJN-ld-Skj"/>
+                                    <constraint firstAttribute="bottom" secondItem="rfj-RU-g0L" secondAttribute="bottom" constant="12" id="gfX-jQ-cyw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LtW-Wl-e5x"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hA0-PT-01C" firstAttribute="leading" secondItem="LtW-Wl-e5x" secondAttribute="leading" id="6cV-kd-Ei7"/>
-                            <constraint firstItem="hA0-PT-01C" firstAttribute="top" secondItem="LtW-Wl-e5x" secondAttribute="top" id="OoK-xQ-la8"/>
-                            <constraint firstItem="LtW-Wl-e5x" firstAttribute="bottom" secondItem="hA0-PT-01C" secondAttribute="bottom" id="RyS-cG-iQN"/>
-                            <constraint firstItem="LtW-Wl-e5x" firstAttribute="trailing" secondItem="hA0-PT-01C" secondAttribute="trailing" id="hNz-sI-9fH"/>
+                            <constraint firstItem="LtW-Wl-e5x" firstAttribute="bottom" secondItem="hA0-PT-01C" secondAttribute="bottom" id="32W-jD-em4"/>
+                            <constraint firstItem="dO8-vQ-u9S" firstAttribute="top" secondItem="LtW-Wl-e5x" secondAttribute="top" id="ROz-Dz-HKC"/>
+                            <constraint firstItem="LtW-Wl-e5x" firstAttribute="trailing" secondItem="dO8-vQ-u9S" secondAttribute="trailing" id="RjJ-Fa-K9h"/>
+                            <constraint firstItem="hA0-PT-01C" firstAttribute="leading" secondItem="LtW-Wl-e5x" secondAttribute="leading" id="SAh-mJ-WqK"/>
+                            <constraint firstItem="hA0-PT-01C" firstAttribute="trailing" secondItem="LtW-Wl-e5x" secondAttribute="trailing" id="Suf-98-12Z"/>
+                            <constraint firstItem="hA0-PT-01C" firstAttribute="top" secondItem="dO8-vQ-u9S" secondAttribute="bottom" id="jDx-mW-1ya"/>
+                            <constraint firstItem="dO8-vQ-u9S" firstAttribute="leading" secondItem="LtW-Wl-e5x" secondAttribute="leading" id="vYI-dQ-DZw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="98I-FT-jqD">
@@ -99,6 +226,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="moodSurveyButton" destination="6lA-9L-SQS" id="KVO-hm-AF6"/>
                         <outlet property="tableView" destination="hA0-PT-01C" id="vcc-k8-p6s"/>
                     </connections>
                 </viewController>
@@ -188,6 +316,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="square" catalog="system" width="128" height="114"/>
+        <image name="x.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -196,6 +325,9 @@
         </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

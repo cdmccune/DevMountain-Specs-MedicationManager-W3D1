@@ -3,8 +3,19 @@
     <entity name="Medication" representedClassName="Medication" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String"/>
         <attribute name="timeOfDay" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="takenDates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TakenDate" inverseName="medication" inverseEntity="TakenDate"/>
+    </entity>
+    <entity name="MoodSurvey" representedClassName="MoodSurvey" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="mentalState" attributeType="String"/>
+    </entity>
+    <entity name="TakenDate" representedClassName="TakenDate" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="medication" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medication" inverseName="takenDates" inverseEntity="Medication"/>
     </entity>
     <elements>
-        <element name="Medication" positionX="-54" positionY="-9" width="128" height="59"/>
+        <element name="Medication" positionX="-456.375244140625" positionY="-116.3347473144531" width="128" height="73"/>
+        <element name="TakenDate" positionX="-170.1503295898438" positionY="-99.4964599609375" width="128" height="58"/>
+        <element name="MoodSurvey" positionX="-315" positionY="-81" width="128" height="59"/>
     </elements>
 </model>
