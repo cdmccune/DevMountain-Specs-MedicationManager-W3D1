@@ -24,6 +24,7 @@
 		2448613C2846C44400E788ED /* MoodSurvey+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2448613B2846C44400E788ED /* MoodSurvey+Convenience.swift */; };
 		2448613E2846C4DD00E788ED /* MoodSurveyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2448613D2846C4DD00E788ED /* MoodSurveyController.swift */; };
 		246F48EA2847D44B00712D6A /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246F48E92847D44A00712D6A /* NotificationScheduler.swift */; };
+		246F48EC2847E79100712D6A /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246F48EB2847E79100712D6A /* Strings.swift */; };
 		24EF48462846962C0008881C /* TakenDate + Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EF48452846962C0008881C /* TakenDate + Convenience.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		2448613B2846C44400E788ED /* MoodSurvey+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodSurvey+Convenience.swift"; sourceTree = "<group>"; };
 		2448613D2846C4DD00E788ED /* MoodSurveyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSurveyController.swift; sourceTree = "<group>"; };
 		246F48E92847D44A00712D6A /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+		246F48EB2847E79100712D6A /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		24EF48452846962C0008881C /* TakenDate + Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TakenDate + Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 				242658E128452BD800C2F5B1 /* LaunchScreen.storyboard */,
 				2426592A28455CDC00C2F5B1 /* DateFormatter.swift */,
 				246F48E92847D44A00712D6A /* NotificationScheduler.swift */,
+				246F48EB2847E79100712D6A /* Strings.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				2448613E2846C4DD00E788ED /* MoodSurveyController.swift in Sources */,
 				242658FD2845423A00C2F5B1 /* Medication+Convenience.swift in Sources */,
+				246F48EC2847E79100712D6A /* Strings.swift in Sources */,
 				242658ED2845369400C2F5B1 /* MedicationDetailViewController.swift in Sources */,
 				24EF48462846962C0008881C /* TakenDate + Convenience.swift in Sources */,
 				242658D428452BD200C2F5B1 /* AppDelegate.swift in Sources */,

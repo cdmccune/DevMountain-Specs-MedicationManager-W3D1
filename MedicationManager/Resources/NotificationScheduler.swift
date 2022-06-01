@@ -15,6 +15,8 @@ class NotificationScheduler {
         content.title = "Reminder"
         content.body = "It's time to take your \(medication.name ?? "")"
         content.sound = .default
+        content.userInfo = [Strings.medicationIDKey :id]
+        content.categoryIdentifier = Strings.notificationCategoryIdentifier
         
         let fireDateComponents = Calendar.current.dateComponents([.hour, .minute], from: medication.timeOfDay ?? Date())
         let trigger = UNCalendarNotificationTrigger(dateMatching: fireDateComponents, repeats: true)
@@ -26,7 +28,9 @@ class NotificationScheduler {
         }
     }
  
-    func cancelNotifications() {
+    func cancelNotifications(for medication: Medication) {
+        guard let id = medication.id else {return}
         
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
     }
 }

@@ -11,11 +11,12 @@ import CoreData
 class MedicationController {
     
     static let shared = MedicationController()
+    let notificationScheduler = NotificationScheduler()
     
     private init() {}
     
     private lazy var fetchRequest: NSFetchRequest<Medication> = {
-        let request = NSFetchRequest<Medication>(entityName: "Medication")
+        let request = NSFetchRequest<Medication>(entityName: Strings.medicationEntityType)
         request.predicate = NSPredicate(value:true)
         return request
     }()
@@ -32,6 +33,7 @@ class MedicationController {
         CoreDataStack.saveContext()
         
         //Schedule Notification
+        notificationScheduler.scheduleNotifications(for: medication)
     }
     
     func fetchMedications() {
@@ -46,6 +48,9 @@ class MedicationController {
         medication.name = name
         medication.timeOfDay = timeOfDay
         CoreDataStack.saveContext()
+        
+        notificationScheduler.cancelNotifications(for: medication)
+        notificationScheduler.scheduleNotifications(for: medication)
     }
     
     func markMedicationTaken(medication: Medication, wasTaken: Bool) {
@@ -56,7 +61,7 @@ class MedicationController {
                 takenMeds.append(medication)
             }
         } else {
-            let mutableTakenDates = medication.mutableSetValue(forKey: "takenDates")
+            let mutableTakenDates = medication.mutableSetValue(forKey: Strings.takenDatesKey)
             
             if let takenDate = (mutableTakenDates as? Set<TakenDate>)?.first(where: {takenDate in
                 guard let date = takenDate.date else {return false}
@@ -74,8 +79,24 @@ class MedicationController {
         CoreDataStack.saveContext()
     }
     
-    func deleteMedication(medication: Medication, wasTaken: Bool) {
+    func markMedicationTaken(withID id: String) {
+        guard let medication = notTakenMeds.first(where: {$0.id == id})
+        else {return}
         
-        //Cancel Notification
+        markMedicationTaken(medication: medication, wasTaken: true)
+    }
+    
+    func deleteMedication(_ medication: Medication) {
+        
+        
+        if let index = notTakenMeds.firstIndex(of: medication) {
+            notTakenMeds.remove(at: index)
+        } else if let index = takenMeds.firstIndex(of: medication) {
+            takenMeds.remove(at: index)
+        }
+        
+        CoreDataStack.context.delete(medication)
+        CoreDataStack.saveContext()
+        notificationScheduler.cancelNotifications(for: medication)
     }
 }
