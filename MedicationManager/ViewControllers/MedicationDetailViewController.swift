@@ -51,7 +51,7 @@ class MedicationDetailViewController: UIViewController {
                 !name.isEmpty
         else {return}
         
-        let date = datePicker.date
+        var date = datePicker.date
         
         if let medication = medication {
             MedicationController.shared.updateMedication(medication: medication, name: name, timeOfDay: date)

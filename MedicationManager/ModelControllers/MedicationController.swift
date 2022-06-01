@@ -84,6 +84,7 @@ class MedicationController {
         else {return}
         
         markMedicationTaken(medication: medication, wasTaken: true)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Strings.medicationReminderTakenButtonTapped),object: self)
     }
     
     func deleteMedication(_ medication: Medication) {
@@ -98,5 +99,6 @@ class MedicationController {
         CoreDataStack.context.delete(medication)
         CoreDataStack.saveContext()
         notificationScheduler.cancelNotifications(for: medication)
+        
     }
 }

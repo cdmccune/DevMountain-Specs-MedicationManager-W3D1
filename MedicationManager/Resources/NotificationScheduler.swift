@@ -32,5 +32,6 @@ class NotificationScheduler {
         guard let id = medication.id else {return}
         
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+        
     }
 }

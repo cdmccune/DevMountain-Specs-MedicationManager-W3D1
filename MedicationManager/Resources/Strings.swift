@@ -21,6 +21,7 @@ enum Strings {
     static let medicationCellID = "medicationCell"
     static let medDetailSegue = "toMedicationDetails"
     static let medicationReminderID = "medicationReminderReceived"
+    static let medicationReminderTakenButtonTapped = "takenAction"
     static let moodSurveyEntityType = "MoodSurvey"
     static let notificationCategoryIdentifier = "MedicationReminder"
     static let surveyViewControllerID = "SurveyViewController"
