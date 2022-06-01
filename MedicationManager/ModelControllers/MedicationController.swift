@@ -18,6 +18,8 @@ class MedicationController {
     private lazy var fetchRequest: NSFetchRequest<Medication> = {
         let request = NSFetchRequest<Medication>(entityName: Strings.medicationEntityType)
         request.predicate = NSPredicate(value:true)
+        let sortDescriptor = NSSortDescriptor(key: "timeOfDay", ascending: true)
+        request.sortDescriptors = [sortDescriptor]
         return request
     }()
     
@@ -39,7 +41,7 @@ class MedicationController {
     func fetchMedications() {
         
         let medications = (try? CoreDataStack.context.fetch(self.fetchRequest)) ?? []
-//
+        
         takenMeds = medications.filter {$0.wasTakenToday()}
         notTakenMeds = medications.filter { !$0.wasTakenToday()}
     }
@@ -99,6 +101,16 @@ class MedicationController {
         CoreDataStack.context.delete(medication)
         CoreDataStack.saveContext()
         notificationScheduler.cancelNotifications(for: medication)
+    }
+    
+    func sortMeds() {
+//        let sortDescriptor = NSSortDescriptor(key: "timeOfDay", ascending: true)
+//        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        let medications = (try? CoreDataStack.context.fetch(self.fetchRequest)) ?? []
+        
+        takenMeds = medications.filter {$0.wasTakenToday()}
+        notTakenMeds = medications.filter { !$0.wasTakenToday()}
         
     }
 }

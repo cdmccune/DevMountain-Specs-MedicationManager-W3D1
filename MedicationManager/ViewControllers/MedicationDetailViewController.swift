@@ -27,6 +27,8 @@ class MedicationDetailViewController: UIViewController {
             nameTextField.text = medication.name
             datePicker.date = timeOfDay
             
+            
+            
         } else {
             title = Strings.addMedicationTitle
         }
@@ -51,7 +53,7 @@ class MedicationDetailViewController: UIViewController {
                 !name.isEmpty
         else {return}
         
-        var date = datePicker.date
+        let date = datePicker.date
         
         if let medication = medication {
             MedicationController.shared.updateMedication(medication: medication, name: name, timeOfDay: date)

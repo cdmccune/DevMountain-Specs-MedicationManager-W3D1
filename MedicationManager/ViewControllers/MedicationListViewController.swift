@@ -12,6 +12,7 @@ class MedicationListViewController: UIViewController  {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var moodSurveyButton: UIButton!
     
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -41,6 +42,12 @@ class MedicationListViewController: UIViewController  {
         
         tableView.reloadData()
     }
+    
+    @IBAction func sortMedsButtonTapped(_ sender: Any) {
+        MedicationController.shared.sortMeds()
+        tableView.reloadData()
+    }
+    
     
     @IBAction func surveyButtonTapped(_ sender: Any) {
         guard let moodSurveyViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Strings.surveyViewControllerID) as? SurveyViewController else {return}

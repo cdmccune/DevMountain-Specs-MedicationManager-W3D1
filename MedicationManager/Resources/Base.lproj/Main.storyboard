@@ -175,33 +175,50 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dO8-vQ-u9S">
                                 <rect key="frame" x="0.0" y="88" width="414" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Today I am feeling: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfj-RU-g0L">
-                                        <rect key="frame" x="16" y="12" width="322" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Today I am feeling: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfj-RU-g0L">
+                                        <rect key="frame" x="127" y="8" width="221" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lA-9L-SQS">
-                                        <rect key="frame" x="354" y="8" width="44" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lA-9L-SQS">
+                                        <rect key="frame" x="348" y="5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6lA-9L-SQS" secondAttribute="height" multiplier="1:1" id="ChS-Mk-WdO"/>
+                                            <constraint firstAttribute="height" constant="50" id="hzF-IU-ms3"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="❓"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="❓"/>
                                         <connections>
                                             <action selector="surveyButtonTapped:" destination="XRY-eo-OdT" eventType="touchUpInside" id="SUJ-Ur-zud"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeF-vm-NC2">
+                                        <rect key="frame" x="16" y="8" width="95" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sort Meds">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="sortMedsButtonTapped:" destination="XRY-eo-OdT" eventType="touchUpInside" id="OnI-Ww-u1g"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <constraints>
-                                    <constraint firstItem="6lA-9L-SQS" firstAttribute="top" secondItem="dO8-vQ-u9S" secondAttribute="top" constant="8" id="2zQ-pR-z9T"/>
-                                    <constraint firstItem="rfj-RU-g0L" firstAttribute="leading" secondItem="dO8-vQ-u9S" secondAttribute="leading" constant="16" id="4dV-ro-q2q"/>
-                                    <constraint firstItem="6lA-9L-SQS" firstAttribute="leading" secondItem="rfj-RU-g0L" secondAttribute="trailing" constant="16" id="59C-Zb-tcp"/>
-                                    <constraint firstItem="rfj-RU-g0L" firstAttribute="top" secondItem="dO8-vQ-u9S" secondAttribute="top" constant="12" id="JlJ-gO-sLJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="6lA-9L-SQS" secondAttribute="bottom" constant="8" id="R1P-KV-KjI"/>
+                                    <constraint firstItem="6lA-9L-SQS" firstAttribute="leading" secondItem="rfj-RU-g0L" secondAttribute="trailing" id="59C-Zb-tcp"/>
+                                    <constraint firstItem="BeF-vm-NC2" firstAttribute="leading" secondItem="dO8-vQ-u9S" secondAttribute="leading" constant="16" id="A5U-mh-mRl"/>
+                                    <constraint firstItem="rfj-RU-g0L" firstAttribute="top" secondItem="dO8-vQ-u9S" secondAttribute="top" constant="8" id="JlJ-gO-sLJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="6lA-9L-SQS" secondAttribute="bottom" constant="5" id="Ou7-aa-7jV"/>
+                                    <constraint firstItem="BeF-vm-NC2" firstAttribute="top" secondItem="dO8-vQ-u9S" secondAttribute="top" constant="8" id="Rmq-Qi-wwa"/>
+                                    <constraint firstItem="rfj-RU-g0L" firstAttribute="leading" secondItem="BeF-vm-NC2" secondAttribute="trailing" constant="16" id="bDi-uv-VGw"/>
                                     <constraint firstAttribute="trailing" secondItem="6lA-9L-SQS" secondAttribute="trailing" constant="16" id="bJN-ld-Skj"/>
-                                    <constraint firstAttribute="bottom" secondItem="rfj-RU-g0L" secondAttribute="bottom" constant="12" id="gfX-jQ-cyw"/>
+                                    <constraint firstAttribute="bottom" secondItem="rfj-RU-g0L" secondAttribute="bottom" constant="8" id="gfX-jQ-cyw"/>
+                                    <constraint firstAttribute="bottom" secondItem="BeF-vm-NC2" secondAttribute="bottom" constant="8" id="jrt-aL-zJQ"/>
+                                    <constraint firstItem="6lA-9L-SQS" firstAttribute="top" secondItem="dO8-vQ-u9S" secondAttribute="top" constant="5" id="qpd-Wn-4iJ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -322,6 +339,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
