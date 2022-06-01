@@ -14,6 +14,27 @@ protocol MoodSurveyControllerDelegate: AnyObject {
 
 class SurveyViewController: UIViewController {
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reminderFired),
+                                               name: NSNotification.Name(rawValue: Strings.medicationReminderID),
+                                               object: nil)
+    }
+    
+    @objc private func reminderFired() {
+        view.backgroundColor = .systemRed
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.view.backgroundColor = .systemCyan
+        }
+        
+    }
+    
     weak var delegate: MoodSurveyControllerDelegate?
     
     @IBAction func closeButtonTapped(_ sender: Any) {

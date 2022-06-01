@@ -12,6 +12,10 @@ class MedicationDetailViewController: UIViewController {
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var datePicker: UIDatePicker!
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     var medication: Medication?
     
     override func viewDidLoad() {
@@ -25,6 +29,19 @@ class MedicationDetailViewController: UIViewController {
             
         } else {
             title = Strings.addMedicationTitle
+        }
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reminderFired),
+                                               name: NSNotification.Name(rawValue: Strings.medicationReminderID),
+                                               object: nil)
+    }
+    
+    @objc private func reminderFired() {
+        view.backgroundColor = .systemRed
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.view.backgroundColor = .systemCyan
         }
     }
     

@@ -269,7 +269,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VXO-4K-vf8"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
                             <constraint firstItem="jFZ-bO-ipM" firstAttribute="leading" secondItem="VXO-4K-vf8" secondAttribute="leading" constant="12" id="7wR-D4-2Rs"/>
                             <constraint firstItem="VXO-4K-vf8" firstAttribute="trailing" secondItem="jFZ-bO-ipM" secondAttribute="trailing" constant="12" id="MZT-vv-StD"/>
@@ -322,9 +322,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
