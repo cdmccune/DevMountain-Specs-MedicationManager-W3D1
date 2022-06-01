@@ -23,6 +23,7 @@
 		2448613A2846C04600E788ED /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244861392846C04600E788ED /* SurveyViewController.swift */; };
 		2448613C2846C44400E788ED /* MoodSurvey+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2448613B2846C44400E788ED /* MoodSurvey+Convenience.swift */; };
 		2448613E2846C4DD00E788ED /* MoodSurveyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2448613D2846C4DD00E788ED /* MoodSurveyController.swift */; };
+		246F48EA2847D44B00712D6A /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246F48E92847D44A00712D6A /* NotificationScheduler.swift */; };
 		24EF48462846962C0008881C /* TakenDate + Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EF48452846962C0008881C /* TakenDate + Convenience.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		244861392846C04600E788ED /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		2448613B2846C44400E788ED /* MoodSurvey+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodSurvey+Convenience.swift"; sourceTree = "<group>"; };
 		2448613D2846C4DD00E788ED /* MoodSurveyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSurveyController.swift; sourceTree = "<group>"; };
+		246F48E92847D44A00712D6A /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
 		24EF48452846962C0008881C /* TakenDate + Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TakenDate + Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 				242658DF28452BD800C2F5B1 /* Assets.xcassets */,
 				242658E128452BD800C2F5B1 /* LaunchScreen.storyboard */,
 				2426592A28455CDC00C2F5B1 /* DateFormatter.swift */,
+				246F48E92847D44A00712D6A /* NotificationScheduler.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				242658D428452BD200C2F5B1 /* AppDelegate.swift in Sources */,
 				242658EB2845368300C2F5B1 /* MedicationListViewController.swift in Sources */,
 				2426592B28455CDC00C2F5B1 /* DateFormatter.swift in Sources */,
+				246F48EA2847D44B00712D6A /* NotificationScheduler.swift in Sources */,
 				242658DE28452BD200C2F5B1 /* MedicationManager.xcdatamodeld in Sources */,
 				242658F728453CCE00C2F5B1 /* MedicationController.swift in Sources */,
 				2448613C2846C44400E788ED /* MoodSurvey+Convenience.swift in Sources */,

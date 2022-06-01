@@ -14,7 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { authorized, error in
+            if let error = error {
+                print("There was an error requesting local notification: \(error)")
+            }
+            
+            if authorized {
+                print("✅ User greated access")
+            } else {
+                print("🛑 User denied access")
+            }
+        }
+        
+        
         return true
     }
 

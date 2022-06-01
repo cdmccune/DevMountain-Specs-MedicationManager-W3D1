@@ -30,6 +30,8 @@ class MedicationController {
         let medication = Medication(name: name, timeOfDay: timeOfDay)
         notTakenMeds.append(medication)
         CoreDataStack.saveContext()
+        
+        //Schedule Notification
     }
     
     func fetchMedications() {
@@ -74,5 +76,6 @@ class MedicationController {
     
     func deleteMedication(medication: Medication, wasTaken: Bool) {
         
+        //Cancel Notification
     }
 }

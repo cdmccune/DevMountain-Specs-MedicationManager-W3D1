@@ -11,6 +11,7 @@ import CoreData
 extension Medication {
     @discardableResult convenience init(name: String, timeOfDay: Date, context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
+        self.id = UUID().uuidString
         self.name = name
         self.timeOfDay = timeOfDay
     }
