@@ -11,6 +11,7 @@ class MedicationListViewController: UIViewController  {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var moodSurveyButton: UIButton!
+    @IBOutlet var sortMedsButton: UIButton!
     
     
     deinit {
@@ -19,6 +20,24 @@ class MedicationListViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //MARK: - Styling
+        sortMedsButton.layer.cornerRadius = 10
+        
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.systemBackground
+                
+        // This will alter the navigation bar title appearance
+        let titleAttribute = [NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 25), NSAttributedString.Key.foregroundColor: UIColor.black] //alter to fit your needs
+        appearance.titleTextAttributes = titleAttribute
+
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        
+        title = "Your Medications"
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(reminderFired),
@@ -56,10 +75,25 @@ class MedicationListViewController: UIViewController  {
     }
     
     @objc private func reminderFired() {
-        tableView.backgroundColor = .systemRed
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.systemRed
+        let titleAttribute = [NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 25), NSAttributedString.Key.foregroundColor: UIColor.black]
+        appearance.titleTextAttributes = titleAttribute
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.tableView.backgroundColor = .systemBackground
+            
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.systemBackground
+            let titleAttribute = [NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 25), NSAttributedString.Key.foregroundColor: UIColor.black]
+            appearance.titleTextAttributes = titleAttribute
+            self.navigationController?.navigationBar.standardAppearance = appearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+            
         }
     }
         

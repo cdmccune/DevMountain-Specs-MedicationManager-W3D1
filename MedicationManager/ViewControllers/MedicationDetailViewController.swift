@@ -11,6 +11,8 @@ class MedicationDetailViewController: UIViewController {
 
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var innerView: UIView!
+    @IBOutlet var outerView: UIView!
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -20,7 +22,11 @@ class MedicationDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //MARK: - Styling
+        innerView.layer.cornerRadius = 10
+        outerView.layer.cornerRadius = 10
+        
         if let medication = medication,
            let timeOfDay = medication.timeOfDay{
             title = Strings.medDetailSegue
@@ -40,10 +46,22 @@ class MedicationDetailViewController: UIViewController {
     }
     
     @objc private func reminderFired() {
-        view.backgroundColor = .systemRed
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.systemRed
+        let titleAttribute = [NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 25), NSAttributedString.Key.foregroundColor: UIColor.red]
+        appearance.titleTextAttributes = titleAttribute
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.view.backgroundColor = .systemCyan
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.systemBackground
+            let titleAttribute = [NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 25), NSAttributedString.Key.foregroundColor: UIColor.black]
+            appearance.titleTextAttributes = titleAttribute
+            self.navigationController?.navigationBar.standardAppearance = appearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
         }
     }
     

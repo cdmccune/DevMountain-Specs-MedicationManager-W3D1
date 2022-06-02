@@ -27,10 +27,22 @@ class SurveyViewController: UIViewController {
     }
     
     @objc private func reminderFired() {
-        view.backgroundColor = .systemRed
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.systemRed
+        let titleAttribute = [NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 25), NSAttributedString.Key.foregroundColor: UIColor.black]
+        appearance.titleTextAttributes = titleAttribute
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.view.backgroundColor = .systemCyan
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.systemRed
+            let titleAttribute = [NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 25), NSAttributedString.Key.foregroundColor: UIColor.black]
+            appearance.titleTextAttributes = titleAttribute
+            self.navigationController?.navigationBar.standardAppearance = appearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
         }
         
     }
